@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+# Make N instances of zoom in seaprate home directories
+
+dockint=~/research/dockint/dockint
+
+for i in $(seq 1 $1)
+do
+export container=zoom${i}
+${dockint} start zoomd ~/zoomd/${container}
+done
